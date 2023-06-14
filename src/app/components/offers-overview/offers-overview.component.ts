@@ -10,7 +10,7 @@ export class OffersOverviewComponent implements OnInit {
   constructor() { }
   property: any = {
     title: "3ZKB Helle Wohnung in Trier",
-    price: 459.000,
+    price: 459000,
     bedrooms: 2,
     bathrooms: 1,
     image: "https://www.engelvoelkers.com/images/2738b482-b0d6-4e1f-b4de-0500a5f9e8df/sonnige-maisonette-wohnung-mit-tiefgaragenstellplatz-3-obergeschoss",
@@ -24,6 +24,9 @@ export class OffersOverviewComponent implements OnInit {
   }
 
   loadProperties() {
+    this.properties.push(this.property);
+    this.properties.push(this.property);
+    this.properties.push(this.property);
     this.properties.push(this.property);
     this.properties.push(this.property);
     this.properties.push(this.property);
