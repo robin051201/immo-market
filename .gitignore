@@ -44,3 +44,4 @@ testem.log
 Local settings
 .DS_Store
 Thumbs.db
+/.vs/
