@@ -17,23 +17,11 @@ export class TopNavComponent {
       title: "Home",
       navigationLink: "/home"
     };
-    this.navigationEntries.push(homeEntry)
-
-    let aboutMeEntry: NavigationEntry = {
-      title: "About Me",
-      navigationLink: "/about-me"
-    };
-    this.navigationEntries.push(aboutMeEntry)
-
-    let pagesEntry: NavigationEntry = {
-      title: "Pages",
-      navigationLink: "/pages"
-    };
-    this.navigationEntries.push(pagesEntry)
+    this.navigationEntries.push(homeEntry);
 
     let contactsEntry: NavigationEntry = {
-      title: "Contacts",
-      navigationLink: "/contacts"
+      title: "Results",
+      navigationLink: "/results"
     };
     this.navigationEntries.push(contactsEntry)
 
