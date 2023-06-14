@@ -262,6 +262,11 @@ body {
 
 .container .box .bottom .advants > div {
   margin-right: 15px;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .container .box .bottom .advants > div > span {
@@ -270,7 +275,8 @@ body {
 }
 
 .container .box .bottom .advants > div > div {
-  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 5px;
   display: flex;
   align-items: center;
 }
@@ -283,7 +289,7 @@ body {
 .container .box .bottom .advants > div > div > span {
   font-size: 12px;
   font-weight: bold;
-  margin-left: 10px;
+
 }
 
 .container .box .bottom .advants > div > div > span > span {
