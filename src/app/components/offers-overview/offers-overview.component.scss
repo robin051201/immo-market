@@ -25,6 +25,7 @@
   width: 100%;
   display: flex;
   margin-top: 174px;
+  overflow: auto;
 
   & .section-container {
     width: 100%;
@@ -306,4 +307,3 @@ body {
   color: #3eaba1;
   font-size: 22px;
 }
-

@@ -25,9 +25,7 @@
   width: 100%;
   display: flex;
   margin-top: 174px;
-  cursor: pointer;
-
-
+  cursor: pointer;  
 
   & .section-container {
     width: 100%;
@@ -40,7 +38,6 @@
     background-size: cover;
 
     &.header {
-      max-height: 630px;
       background-color: var(--color-header-background);
     }
 
@@ -84,6 +81,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            position: relative;
 
             & .property-search-input {
               background-color: var(--color-navigation-button-background);
@@ -97,6 +95,19 @@
 
               &:hover {
                 background-color: var(--color-navigation-button-background-hover);
+              }
+            }
+
+
+            & .search-results-container {
+              position: absolute;
+              bottom: -46px;
+              background-color: red;
+              height: 45px;
+              max-width: 673px;
+              min-width: 673px;
+
+              & .search-result-entry {
               }
             }
           }

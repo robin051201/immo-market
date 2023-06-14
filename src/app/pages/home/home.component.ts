@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  searchTerm?: string;
+  title = 'Home';
 
   constructor() {
   }
 
-  title = 'Home';
 }
 
 interface WeatherForecast {

@@ -8,6 +8,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OffersOverviewComponent } from './components/offers-overview/offers-overview.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,10 @@ import { OffersOverviewComponent } from './components/offers-overview/offers-ove
     TopNavComponent,
     HomeComponent,
     ContactComponent,
-    OffersOverviewComponent,
+    OffersOverviewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
