@@ -25,6 +25,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 
   & .top-nav-content {
     max-width: 1140px;

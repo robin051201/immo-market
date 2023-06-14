@@ -23,7 +23,12 @@ export class TopNavComponent {
       title: "Results",
       navigationLink: "/results"
     };
+    let offersEntry: NavigationEntry = {
+      title: "Offers",
+      navigationLink: "/offers-overview"
+    }
     this.navigationEntries.push(contactsEntry)
+    this.navigationEntries.push(offersEntry)
 
     console.log(this.navigationEntries)
   }

@@ -1,6 +1,17 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Local settings (.vs)",
+    "\\Local settings (.vs)\\immo-market",
+    "\\Local settings (.vs)\\immo-market\\FileContentIndex",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\top-nav",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\home",
+    "\\src\\assets",
+    "\\src\\assets\\images"
   ],
+  "SelectedNode": "\\Local settings (.vs)\\immo-market\\FileContentIndex",
   "PreviewInSolutionExplorer": false
 }
