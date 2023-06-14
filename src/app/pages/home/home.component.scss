@@ -4,8 +4,8 @@
 */
   --color-header-background: #f7f6f3;
   --color-navigation-text-active: #9c380c;
-  --color-navigation-button-background: #3f6c51;
-  --color-navigation-button-background-hover: #2d4d3a;
+  --color-navigation-button-background: #f7f6f3;
+  --color-navigation-button-background-hover: #d7d7d7;
   --color-navigation-button-text: #fff;
   /*
   ------------------------------------------------------------
@@ -27,7 +27,7 @@
   margin-top: 174px;
   cursor: pointer;
 
-  
+
 
   & .section-container {
     width: 100%;
@@ -81,12 +81,23 @@
             display: flex;
             flex-flow: row;
             margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
 
-            & .property-search {
+            & .property-search-input {
               background-color: var(--color-navigation-button-background);
               box-shadow: none;
-               
-               
+              padding: 0.5em;
+              border: 0;
+              width: calc(100% - 64px);
+              outline: none;
+              height: 45px;
+              max-width: 660px;
+
+              &:hover {
+                background-color: var(--color-navigation-button-background-hover);
+              }
             }
           }
         }
