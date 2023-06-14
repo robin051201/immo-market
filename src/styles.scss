@@ -5,9 +5,9 @@ body {
   height: 100vh;
 }
 
-  body * {
-    display: block;
-  }
+body * {
+  display: block;
+}
 
 @font-face {
   font-family: 'Sarine';
@@ -24,6 +24,11 @@ body {
   font-family: 'Material Icons';
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
 
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
