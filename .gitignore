@@ -41,5 +41,6 @@ testem.log
 /typings
 
 # System Files
+Local settings
 .DS_Store
 Thumbs.db
