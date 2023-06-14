@@ -1,1 +1,29 @@
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+  body * {
+    display: block;
+  }
+
+@font-face {
+  font-family: 'Sarine';
+  src: url('assets/fonts/sarine.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Sarine', Arial, sans-serif;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
