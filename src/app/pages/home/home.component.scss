@@ -1,0 +1,122 @@
+.page-container {
+  /*
+  variable allway on the top so we have better overview of the colors
+*/
+  --color-header-background: #f7f6f3;
+  --color-navigation-text-active: #9c380c;
+  --color-navigation-button-background: #3f6c51;
+  --color-navigation-button-background-hover: #2d4d3a;
+  --color-navigation-button-text: #fff;
+  /*
+  ------------------------------------------------------------
+*/
+  --color-navigation-secondary-button-background: #9c380c;
+  --color-navigation-secondary-button-background-hover: #722809;
+  /*
+  ------------------------------------------------------------
+*/
+  --color-subtitle: #6c6865;
+  --color-title: #000;
+  /*
+  ------------------------------------------------------------
+*/
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  margin-top: 109px;
+
+  & .section-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &.header {
+      max-height: 630px;
+      background-color: var(--color-header-background);
+    }
+
+    & .header-container {
+      width: 100%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+
+
+      & .header-content {
+        display: flex;
+        flex-flow: row;
+        height: 100%;
+
+        & .left-side-container {
+          width: 36%;
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          flex-flow: column;
+
+          & .subtitle {
+            color: var(--color-subtitle);
+            font-size: 18px;
+            margin-bottom: 16px;
+            font-weight: 300;
+          }
+
+          & .title {
+            color: var(--color-btitle);
+            font-size: 63px;
+            font-family: "Libre Baskerville";
+          }
+
+          & .button-container {
+            display: flex;
+            flex-flow: row;
+            margin-top: 50px;
+
+            & .meet-me-button {
+              background-color: var(--color-navigation-button-background);
+              box-shadow: none;
+              border: 0;
+              padding: 16px 32px 14px 32px;
+              border-radius: 1px;
+              transition: all .3s;
+              margin-left: 48px;
+
+              &:first-child {
+                margin-left: 0;
+              }
+
+              &:hover {
+                background-color: var(--color-navigation-button-background-hover);
+              }
+
+              &.secondary {
+                background-color: var(--color-navigation-secondary-button-background);
+
+                &:hover {
+                  background-color: var(--color-navigation-secondary-button-background-hover);
+                }
+              }
+
+              & span {
+                font-size: 18px;
+                color: var(--color-navigation-button-text);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & .right-side-container {
+      width: 63.956%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(https://mizar-elementor.42theme.com/wp-content/uploads/2020/12/college-professor-explaining-math-KKUT5PV-2.png);
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}

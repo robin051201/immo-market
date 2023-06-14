@@ -1,0 +1,24 @@
+
+<div class="top-nav-content">
+
+  <div class="logo-container">
+    <div class="logo-name"> Omilia <span class="logo-sub-name"> Alexandors Tzanetos</span> </div>
+  </div>
+
+  <div class="navigation-menu-container">
+    <ng-container *ngFor="let entry of navigationEntries">
+      <span class="navigation-entry"
+            [routerLink]="entry.navigationLink.toString()"
+            routerLinkActive="active">
+        {{entry.title}}
+      </span>
+    </ng-container>
+
+
+
+    <button class="meet-me-button">
+      <span>Meet me</span>
+    </button>
+  </div>
+
+</div>

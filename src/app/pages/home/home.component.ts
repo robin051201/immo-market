@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'lib-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent {
-  public forecasts?: WeatherForecast[];
+export class HomeComponent {
 
   constructor() {
   }
 
-  title = 'Immo Market';
+  title = 'Home';
 }
 
 interface WeatherForecast {

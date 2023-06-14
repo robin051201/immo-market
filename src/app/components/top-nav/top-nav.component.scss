@@ -1,0 +1,94 @@
+
+
+:host {
+  /*
+  variable allway on the top so we have better overview of the colors
+*/
+  --color-top-bar-background: #f7f6f3;
+  --color-top-bar-border: #EFEDE6;
+  --color-logo-text: #070600;
+  --color-navigation-text: #3b393a;
+  --color-navigation-text-active: #9c380c;
+  --color-navigation-button-background: #3f6c51;
+  --color-navigation-button-background-hover: #2d4d3a;
+  --color-navigation-button-text: #fff;
+  /*
+  ------------------------------------------------------------
+*/
+  height: 109px;
+  background: var(--color-top-bar-background);
+  display: flex;
+  border-bottom: 1px solid var(--color-top-bar-border);
+  padding: 32px 24px 32px 24px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  & .top-nav-content {
+    max-width: 1140px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & .logo-container {
+      width: 23%;
+      height: fit-content;
+
+      & .logo-name {
+        color: var(--color-logo-text);
+        font-size: 42px;
+        font-family: "Libre Baskerville";
+
+        & .logo-sub-name {
+          color: var(--color-logo-text);
+          font-size: 12px;
+          font-family: "Sarine";
+        }
+      }
+    }
+
+    & .navigation-menu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+
+      & .navigation-entry {
+        font-size: 18px;
+        padding: 12px 20px 12px 20px;
+        color: var(--color-navigation-text);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-navigation-text-active);
+        }
+
+        &.active {
+          color: var(--color-navigation-text-active);
+        }
+      }
+
+      & .meet-me-button {
+        background-color: var(--color-navigation-button-background);
+        box-shadow: none;
+        border: 0;
+        padding: 16px 32px 14px 32px;
+        border-radius: 1px;
+        transition: all .3s;
+        margin-left: 48px;
+
+        &:hover {
+          background-color: var(--color-navigation-button-background-hover);
+        }
+
+        & span {
+          font-size: 18px;
+          color: var(--color-navigation-button-text);
+        }
+      }
+    }
+  }
+}
