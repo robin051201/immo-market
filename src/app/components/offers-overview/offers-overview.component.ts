@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiserviceService } from "../apiservice.service";
 
 @Component({
   selector: 'app-offers-overview',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private offer: ApiserviceService) {
+    this.offer.getData().subscribe(offers => {
+      console.log(offers);
+    });
+  }
   property: any = {
     title: "3ZKB Helle Wohnung in Trier",
     price: 459000,
