@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiserviceService } from "../../Services/apiservice.service";
 
 @Component({
   selector: 'app-offers-overview',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersOverviewComponent implements OnInit {
 
-  constructor() { }
-  property: any = {
+  constructor(private offer: ApiserviceService) {
+    this.offer.getData().subscribe((offers) => {
+      this.propertiesNew = offers;
+      console.log(this.propertiesNew);
+    });
+  }
+
+  pproperty: any = {
     title: "3ZKB Helle Wohnung in Trier",
     price: 459000,
     bedrooms: 2,
@@ -18,17 +25,75 @@ export class OffersOverviewComponent implements OnInit {
     description: "Helle Wohnung. Optimal für Pendler"
   }
   properties: any = [];
+  propertiesNew: Array<Property> = [];
 
   ngOnInit(): void {
     this.loadProperties();
   }
 
   loadProperties() {
-    this.properties.push(this.property);
-    this.properties.push(this.property);
-    this.properties.push(this.property);
-    this.properties.push(this.property);
-    this.properties.push(this.property);
-    this.properties.push(this.property);
   }
+}
+
+export class Property{
+
+  bathrooms: number | undefined;
+  bedrooms: number | undefined;
+  city: string | undefined;
+  country: string | undefined;
+  description: string | undefined;
+  discountPrice: number | undefined;
+  garageRooms: number | undefined;
+  hasCellar: boolean | undefined;
+  hasDiscount: boolean | undefined;
+  id: number | undefined;
+  immoId: number | undefined;
+  immoName: string | undefined;
+  isActive: boolean | undefined;
+  livingSpaceSize: number | undefined;
+  locationId:number | undefined;
+  mainTitle: string | undefined;
+  objectDetailsId: number | undefined;
+  objectTypeId: number | undefined;
+  objectTypeName: string | undefined;
+  plotSize: number | undefined;
+  priceId: number | undefined;
+  priceOnContact: boolean | undefined;
+  rooms: number | undefined;
+  sellPrice: number | undefined;
+  state: string | undefined;
+  street: string | undefined;
+  subTitle: string | undefined;
+
+
+  constructor(
+    bathrooms: number,
+    bedrooms: number,
+    city: string,
+    country: string,
+    description: string,
+    discountPrice: number,
+    garageRooms: number,
+    hasCellar: boolean,
+    hasDiscount: boolean,
+    id: number,
+    immoId: number,
+    immoName: string,
+    isActive: boolean,
+    livingSpaceSize: number,
+    locationId:number,
+    mainTitle: string,
+    objectDetailsId: number,
+    objectTypeId: number,
+    objectTypeName: string,
+    plotSize: number,
+    priceId: number,
+    priceOnContact: boolean,
+    rooms: number,
+    sellPrice: number,
+    state: string,
+    street: string,
+    subTitle: string,
+    ) {}
+
 }

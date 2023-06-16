@@ -4,16 +4,16 @@
 
 <div class="page-container">
 <div class="container">
-  <ng-container *ngFor="property of properties">
+  <ng-container *ngFor="let property of propertiesNew">
     <div class="box">
       <div class="top">
-        <img src="{{property.image}}" alt="" />
+        <img src="{{pproperty.image}}" alt="" />
         <span
         ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
         ></span>
       </div>
       <div class="bottom">
-        <h3>{{property.title}}</h3>
+        <h3>{{property.mainTitle}}</h3>
         <p>
           {{property.description}}
         </p>
@@ -36,13 +36,13 @@ location_on
 </span>
             <div>
               <i class="fas fa-vector-square"></i
-              ><span>{{property.address}}</span>
+              ><span>{{property.city}}</span>
             </div>
           </div>
         </div>
         <div class="price">
           <span>For Sale</span>
-          <span>{{property.price}} €</span>
+          <span>{{property.sellPrice}} €</span>
         </div>
       </div>
     </div>
