@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module'; 
 import { FormsModule } from '@angular/forms';
 import { OffersOverviewComponent } from './pages/offers-overview/offers-overview.component';
+import { FilterPipe } from './FilterPipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { OffersOverviewComponent } from './pages/offers-overview/offers-overview
     TopNavComponent,
     HomeComponent,
     ContactComponent,
-    OffersOverviewComponent
-  ],
+    OffersOverviewComponent,
+    FilterPipe,
+  ], 
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, FormsModule
   ],

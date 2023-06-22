@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 import { ApiserviceService } from "../../Services/apiservice.service";
 
 @Component({
@@ -7,11 +8,22 @@ import { ApiserviceService } from "../../Services/apiservice.service";
   styleUrls: ['./offers-overview.component.scss']
 })
 export class OffersOverviewComponent implements OnInit {
-
-  constructor(private offer: ApiserviceService) {
+  searchText: string = "";
+  constructor(private offer: ApiserviceService, private route: ActivatedRoute) {
     this.offer.getData().subscribe((offers) => {
       this.propertiesNew = offers;
       console.log(this.propertiesNew);
+    });
+
+    this.route.queryParams.subscribe(params => {
+      const searchText = params.searchTerm;
+      if (searchText) {
+        this.searchText = searchText;
+      } else {
+        this.offer.getData().subscribe((offers) => {
+          this.propertiesNew = offers;
+        });
+      }
     });
   }
 
@@ -35,7 +47,7 @@ export class OffersOverviewComponent implements OnInit {
   }
 }
 
-export class Property{
+export class Property {
 
   bathrooms: number | undefined;
   bedrooms: number | undefined;
@@ -51,7 +63,7 @@ export class Property{
   immoName: string | undefined;
   isActive: boolean | undefined;
   livingSpaceSize: number | undefined;
-  locationId:number | undefined;
+  locationId: number | undefined;
   mainTitle: string | undefined;
   objectDetailsId: number | undefined;
   objectTypeId: number | undefined;
@@ -67,7 +79,7 @@ export class Property{
 
 
   constructor(
-    bathrooms: number,
+    bathrooms: number ,
     bedrooms: number,
     city: string,
     country: string,
@@ -81,7 +93,7 @@ export class Property{
     immoName: string,
     isActive: boolean,
     livingSpaceSize: number,
-    locationId:number,
+    locationId: number,
     mainTitle: string,
     objectDetailsId: number,
     objectTypeId: number,
@@ -94,6 +106,36 @@ export class Property{
     state: string,
     street: string,
     subTitle: string,
-    ) {}
+  ) {
+
+    this.bathrooms = bathrooms;
+    this.city = city;
+    this.country = country;
+    this.description = description;
+    this.discountPrice = discountPrice;
+    this.garageRooms = garageRooms;
+    this.hasCellar = hasCellar;
+    this.hasDiscount = hasDiscount;
+    this.id = id;
+    this.bedrooms = bedrooms;
+    this.immoId = immoId;
+    this.immoName = immoName;
+    this.isActive = isActive;
+    this.livingSpaceSize = livingSpaceSize;
+    this.locationId = locationId;
+    this.mainTitle = mainTitle;
+    this.objectDetailsId = objectDetailsId;
+    this.objectTypeId = objectTypeId;
+    this.objectTypeName = objectTypeName;
+    this.plotSize = plotSize;
+    this.priceId = priceId;
+    this.priceOnContact = priceOnContact;
+    this.rooms = rooms; 
+    this.sellPrice = sellPrice;
+    this.state = state;
+    this.sellPrice = sellPrice;
+    this.street = street;
+    this.subTitle = subTitle;
+  }
 
 }
