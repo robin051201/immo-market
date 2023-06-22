@@ -17,23 +17,20 @@ export class TopNavComponent {
       title: "Home",
       navigationLink: "/home"
     };
-    this.navigationEntries.push(homeEntry);
-
-    let contactsEntry: NavigationEntry = {
-      title: "Results",
-      navigationLink: "/results"
-    };
     let offersEntry: NavigationEntry = {
       title: "Offers",
       navigationLink: "/offers-overview"
     }
-    this.navigationEntries.push(contactsEntry)
+    let contactsEntry: NavigationEntry = {
+      title: "Contact",
+      navigationLink: "/contacts"
+    };
+
+    this.navigationEntries.push(homeEntry);
     this.navigationEntries.push(offersEntry)
+    this.navigationEntries.push(contactsEntry)
 
-    console.log(this.navigationEntries)
   }
-
-  title = 'Omilia';
 }
 
 interface NavigationEntry {

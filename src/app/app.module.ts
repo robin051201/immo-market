@@ -6,9 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AppRoutingModule } from './app-routing.module';
-import { OffersOverviewComponent } from './components/offers-overview/offers-overview.component';
+import { AppRoutingModule } from './app-routing.module'; 
 import { FormsModule } from '@angular/forms';
+import { OffersOverviewComponent } from './pages/offers-overview/offers-overview.component';
 
 @NgModule({
   declarations: [
