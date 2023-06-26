@@ -1,0 +1,314 @@
+.page-container {
+  /*
+  variable allway on the top so we have better overview of the colors
+*/
+  --color-header-background: #f7f6f3;
+  --color-navigation-text-active: #9c380c;
+  --color-navigation-button-background: #3f6c51;
+  --color-navigation-button-background-hover: #2d4d3a;
+  --color-navigation-button-text: #fff;
+  /*
+  ------------------------------------------------------------
+*/
+  --color-navigation-secondary-button-background: #9c380c;
+  --color-navigation-secondary-button-background-hover: #722809;
+  /*
+  ------------------------------------------------------------
+*/
+  --color-subtitle: #6c6865;
+  --color-title: #000;
+  /*
+  ------------------------------------------------------------
+*/
+
+  height: calc(100vh - 174px);
+  width: 100%;
+  display: flex;
+  margin-top: 174px;
+  overflow: auto;
+
+  & .section-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &.header {
+      max-height: 630px;
+      background-color: var(--color-header-background);
+    }
+
+    & .header-container {
+      width: 100%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+
+
+      & .header-content {
+        display: flex;
+        flex-flow: row;
+        height: 100%;
+
+        & .left-side-container {
+          width: 36%;
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          flex-flow: column;
+
+          & .subtitle {
+            color: var(--color-subtitle);
+            font-size: 18px;
+            margin-bottom: 16px;
+            font-weight: 300;
+          }
+
+          & .title {
+            color: var(--color-btitle);
+            font-size: 63px;
+            font-family: "Libre Baskerville";
+          }
+
+          & .button-container {
+            display: flex;
+            flex-flow: row;
+            margin-top: 50px;
+
+            & .meet-me-button {
+              background-color: var(--color-navigation-button-background);
+              box-shadow: none;
+              border: 0;
+              padding: 16px 32px 14px 32px;
+              border-radius: 1px;
+              transition: all .3s;
+              margin-left: 48px;
+
+              &:first-child {
+                margin-left: 0;
+              }
+
+              &:hover {
+                background-color: var(--color-navigation-button-background-hover);
+              }
+
+              &.secondary {
+                background-color: var(--color-navigation-secondary-button-background);
+
+                &:hover {
+                  background-color: var(--color-navigation-secondary-button-background-hover);
+                }
+              }
+
+              & span {
+                font-size: 18px;
+                color: var(--color-navigation-button-text);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & .right-side-container {
+      width: 63.956%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(https://mizar-elementor.42theme.com/wp-content/uploads/2020/12/college-professor-explaining-math-KKUT5PV-2.png);
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+}
+
+.container {
+  width: 1100px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container .box {
+  width: calc((100% / 3) - 20px);
+  background-color: white;
+  position: relative;
+}
+
+//.container .box:first-of-type:before {
+//  content: "Featured";
+//  background-color: #ea723d;
+//  color: white;
+//  font-size: 13px;
+//  padding: 4px 10px;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  transform: translateY(-50%);
+//  z-index: 1;
+//}
+
+//.container .box:first-of-type:after {
+//  content: "";
+//  border-width: 12px;
+//  border-style: solid;
+//  border-color: transparent transparent transparent #ea723d;
+//  position: absolute;
+//  left: 72px;
+//  top: 0;
+//  transform: translateY(-50%);
+//}
+
+.container .box .top {
+  position: relative;
+  background-color: red;
+}
+
+.container .box .top:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 187, 175, 0.829);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.container .box .top:hover:before {
+  opacity: 1;
+}
+
+.container .box .top:after {
+  content: "View Property";
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.container .box .top:hover:after {
+  opacity: 1;
+}
+
+.container .box .top img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+.container .box .top span {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.container .box .top span i {
+  margin-left: 5px;
+}
+
+.container .box .bottom {
+  padding: 20px 15px;
+  position: relative;
+}
+
+//.container .box:not(:last-of-type) .bottom:before {
+//  content: "Hot";
+//  background-color: #ea723d;
+//  color: white;
+//  font-size: 11px;
+//  padding: 4px 7px;
+//  position: absolute;
+//  left: 20px;
+//  top: -40px;
+//  z-index: 1;
+//}
+
+.container .box .bottom h3 {
+  font-size: 15px;
+}
+
+.container .box .bottom > p {
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #777;
+}
+
+.container .box .bottom .advants {
+  display: flex;
+}
+
+.container .box .bottom .advants > div {
+  margin-right: 15px;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .box .bottom .advants > div > span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.container .box .bottom .advants > div > div {
+  margin-left: 8px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.container .box .bottom .advants > div > div i {
+  color: #777;
+  font-size: 22px;
+}
+
+.container .box .bottom .advants > div > div > span {
+  font-size: 12px;
+  font-weight: bold;
+
+}
+.container .box .bottom .advants > div > div > span > span {
+  color: #777;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.container .box .bottom .price {
+  margin-top: 20px;
+}
+
+.container .box .bottom .price span:first-of-type {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.container .box .bottom .price span:last-of-type {
+  color: #3eaba1;
+  font-size: 22px;
+}

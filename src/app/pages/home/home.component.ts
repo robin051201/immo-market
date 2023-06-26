@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lib-home',
@@ -7,11 +8,22 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   searchTerm?: string;
-  title = 'Home';
+  title = 'Home'; 
 
-  constructor() {
+  constructor(private router: Router) { 
   }
 
+  onSearch() {
+    this.router.navigate(['/offers-overview', { queryParams: this.searchTerm }]);
+
+    this.router.navigate(
+      ['/offers-overview'],
+      {
+        queryParams: { searchTerm: this.searchTerm },
+        queryParamsHandling: 'merge'
+      }
+    );
+  }
 }
 
 interface WeatherForecast {

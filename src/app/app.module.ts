@@ -11,6 +11,9 @@ import { OffersOverviewComponent } from './components/offers-overview/offers-ove
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CreateOfferComponent } from './components/create-offer/create-offer.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { OffersOverviewComponent } from './pages/offers-overview/offers-overview.component';
 
 @NgModule({
   declarations: [

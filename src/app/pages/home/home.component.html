@@ -7,12 +7,12 @@
             Modern Marketplace
           </span>
           <div class="property-search-container"> 
-            <input class="property-search-input" placeholder="Wunsch Ort eingeben" [(ngModel)]="searchTerm"/> 
+            <input class="property-search-input" placeholder="Wunsch Ort eingeben und Enter drücken" (keyup.enter)="onSearch()" [(ngModel)]="searchTerm"/> 
             <!--Search Reuslts-->
             <!--<div class="search-results-container">
               <div class="search-result-entry">search-result-entry</div>
             </div>--> 
-        </div>
+          </div>
       </div>
     </div>
   </div>

@@ -19,10 +19,11 @@ export class ApiserviceService {
     return this.http.get<Property[]>(requestUrl);
   }
 
+
   getDataBySearchterm(searchText?: string): Observable<Property[]> {
     let requestUrl = this.url;
     if (searchText) {
-      requestUrl += 'City/' + searchText;
+      requestUrl += 'Main/City/' + searchText;
     }
     return this.http.get<Property[]>(requestUrl);
   }
@@ -30,5 +31,4 @@ export class ApiserviceService {
   getData(): Observable<Property[]> {
     return this.http.get<Property[]>(this.url + "MainView/");
   }
-
 }
