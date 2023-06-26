@@ -14,19 +14,22 @@ export class OffersOverviewComponent implements OnInit {
     private offer: ApiserviceService,
     private route: ActivatedRoute, // neu hinzugefügt
   ) {
-    this.offer.getData().subscribe((offers) => {
-      this.propertiesNew = offers;
-      console.log(this.propertiesNew);
-    });
   } 
-
   ngOnInit(): void {
-    this.loadProperties();
+    this.route.queryParams.subscribe((params) => {
+      if (params.searchTerm) {
+        this.offer.getDataBySearchterm(params.searchTerm).subscribe((offers) => {
+          this.propertiesNew = offers;
+          console.log(this.propertiesNew);
+        });
+      } else {
+        this.loadData();
+      }
+    });
+  }
 
-    this.route.queryParams.pipe(
-      switchMap((params) => this.offer.getDataBySearchterm(params.search)
-      )
-    ).subscribe((offers) => {
+  loadData() {
+    this.offer.getData().subscribe((offers) => {
       this.propertiesNew = offers;
       console.log(this.propertiesNew);
     });
@@ -43,9 +46,7 @@ export class OffersOverviewComponent implements OnInit {
   }
   properties: any = [];
   propertiesNew: Array<Property> = [];
-   
-  loadProperties() {
-  }
+    
 }
 
 export class Property {

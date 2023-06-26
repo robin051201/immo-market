@@ -11,15 +11,24 @@ export class ApiserviceService {
 
   constructor(private http: HttpClient) { }
 
+  //getDataBySearchterm(searchText?: string): Observable<Property[]> {
+  //  let params = new HttpParams();
+  //  if (searchText) {
+  //    params = params.append("Main/" + 'City/', searchText);
+  //  }
+  //  return this.http.get<Property[]>(this.url, { params });
+  //}
+
   getDataBySearchterm(searchText?: string): Observable<Property[]> {
-    let params = new HttpParams();
+    let requestUrl = this.url;
     if (searchText) {
-      params = params.append('search' + "city/", searchText);
+      requestUrl += 'Main/City/' + searchText;
     }
-    return this.http.get<Property[]>(this.url, { params });
+    return this.http.get<Property[]>(requestUrl);
   }
-  getData(): Observable<Property[]> { 
-    return this.http.get<Property[]>(this.url);
+
+  getData(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.url + "MainView/");
   }
 
 }
