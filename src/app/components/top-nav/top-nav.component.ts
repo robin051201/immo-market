@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'lib-top-nav',
@@ -9,8 +10,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class TopNavComponent {
   public navigationEntries?: NavigationEntry[];
+  isAdmin: boolean = false;
+  userStatus: string = 'Admin';
+  createClickedStatus = false;
+  @Output()
+  createClicked = new EventEmitter<boolean>();
 
-  constructor() {
+  constructor(private router: Router) {
     this.navigationEntries = [];
 
     let homeEntry: NavigationEntry = {
@@ -33,7 +39,25 @@ export class TopNavComponent {
     console.log(this.navigationEntries)
   }
 
-  title = 'Omilia';
+  isOffersComponent() {
+    return this.router.url.includes('/offers-overview');
+  }
+
+  changeUserStatus() {
+    this.isAdmin = !this.isAdmin;
+    if (this.isAdmin == true) {
+      this.userStatus = 'User';
+    } else {
+      this.userStatus = 'Admin';
+    }
+  }
+
+  title = 'ImmoMarket';
+
+  createOffer() {
+    this.createClickedStatus = !this.createClickedStatus;
+    this.createClicked.emit(this.createClickedStatus);
+  }
 }
 
 interface NavigationEntry {

@@ -1,0 +1,31 @@
+<dialog class="create-dialog" open>
+  <div class="container">
+    <form [formGroup]="createOfferGroup">
+      <label for="fname">Offer name</label>
+      <input formControlName="offername" type="text" id="fname" placeholder="Nice house with amazing view..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <ngx-dropzone class="picture-drop" (change)="onSelect($event)">
+        <ngx-dropzone-label>Upload pictures by drag & drop</ngx-dropzone-label>
+        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </div>
+</dialog>

@@ -7,6 +7,7 @@ import { ApiserviceService } from "../../Services/apiservice.service";
   styleUrls: ['./offers-overview.component.scss']
 })
 export class OffersOverviewComponent implements OnInit {
+  showCreateDialog: boolean = false;
 
   constructor(private offer: ApiserviceService) {
     this.offer.getData().subscribe((offers) => {
@@ -32,6 +33,15 @@ export class OffersOverviewComponent implements OnInit {
   }
 
   loadProperties() {
+  }
+
+  changeCreateDialogStatus() {
+    if (this.showCreateDialog) {
+      this.showCreateDialog = false;
+    } else {
+      this.showCreateDialog = true;
+    }
+    console.log(this.showCreateDialog);
   }
 }
 

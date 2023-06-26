@@ -14,9 +14,12 @@
       </span>
     </ng-container>
 
-    <button class="meet-me-button">
-      <span>Meet me</span>
+    <button *ngIf="isOffersComponent() && isAdmin" (click)="createOffer()" class="meet-me-button">
+      <span>Create offer</span>
+    </button>
+
+    <button (click)="changeUserStatus()" class="meet-me-button">
+      <span>{{userStatus}} view</span>
     </button>
   </div>
-
 </div>

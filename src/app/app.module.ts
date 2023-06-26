@@ -8,7 +8,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OffersOverviewComponent } from './components/offers-overview/offers-overview.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateOfferComponent } from './components/create-offer/create-offer.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,11 @@ import { FormsModule } from '@angular/forms';
     TopNavComponent,
     HomeComponent,
     ContactComponent,
-    OffersOverviewComponent
+    OffersOverviewComponent,
+    CreateOfferComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, FormsModule
+    BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, FormsModule, NgxDropzoneModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

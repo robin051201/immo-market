@@ -1,8 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
-
 <div class="page-container">
+  <button (click)="changeCreateDialogStatus()">Create</button>
 <div class="container">
   <ng-container *ngFor="let property of propertiesNew">
     <div class="box">
@@ -46,11 +45,7 @@ location_on
         </div>
       </div>
     </div>
-
-
-
-
   </ng-container>
 </div>
-
 </div>
+<app-create-offer *ngIf="showCreateDialog"></app-create-offer>
