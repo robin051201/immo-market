@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contacts', component: ContactComponent },
-  { path: 'offers-overview', component: OffersOverviewComponent},
+  { path: 'offers-overview', component: OffersOverviewComponent },
+  { path: 'offers-overview/:search', component: OffersOverviewComponent }, // neu hinzugefügt
   { path: '**', redirectTo: '/home' }  // If path doesn't match any of the above, redirect to home.
 ];
 

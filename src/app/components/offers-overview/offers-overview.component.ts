@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from "../../Services/apiservice.service";
+import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-offers-overview',
@@ -8,8 +10,23 @@ import { ApiserviceService } from "../../Services/apiservice.service";
 })
 export class OffersOverviewComponent implements OnInit {
 
-  constructor(private offer: ApiserviceService) {
+  constructor(
+    private offer: ApiserviceService,
+    private route: ActivatedRoute, // neu hinzugefügt
+  ) {
     this.offer.getData().subscribe((offers) => {
+      this.propertiesNew = offers;
+      console.log(this.propertiesNew);
+    });
+  } 
+
+  ngOnInit(): void {
+    this.loadProperties();
+
+    this.route.queryParams.pipe(
+      switchMap((params) => this.offer.getDataBySearchterm(params.search)
+      )
+    ).subscribe((offers) => {
       this.propertiesNew = offers;
       console.log(this.propertiesNew);
     });
@@ -26,16 +43,12 @@ export class OffersOverviewComponent implements OnInit {
   }
   properties: any = [];
   propertiesNew: Array<Property> = [];
-
-  ngOnInit(): void {
-    this.loadProperties();
-  }
-
+   
   loadProperties() {
   }
 }
 
-export class Property{
+export class Property {
 
   bathrooms: number | undefined;
   bedrooms: number | undefined;
@@ -51,7 +64,7 @@ export class Property{
   immoName: string | undefined;
   isActive: boolean | undefined;
   livingSpaceSize: number | undefined;
-  locationId:number | undefined;
+  locationId: number | undefined;
   mainTitle: string | undefined;
   objectDetailsId: number | undefined;
   objectTypeId: number | undefined;
@@ -81,7 +94,7 @@ export class Property{
     immoName: string,
     isActive: boolean,
     livingSpaceSize: number,
-    locationId:number,
+    locationId: number,
     mainTitle: string,
     objectDetailsId: number,
     objectTypeId: number,
@@ -94,6 +107,6 @@ export class Property{
     state: string,
     street: string,
     subTitle: string,
-    ) {}
+  ) { }
 
 }
