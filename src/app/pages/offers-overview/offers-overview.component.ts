@@ -75,9 +75,7 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     }
 
     this.openDetails = !this.openDetails;
-    this.detailsId = id;
-    this.detailsTitle = 'Inspect Property';
-    this.dialogType = DialogEnum.Inspect;
+    this.detailsId = id; 
     this.detailsViewService.openDialog(id, DialogEnum.Inspect);
   }
 

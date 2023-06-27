@@ -11,6 +11,11 @@ export class ApiserviceService {
 
   constructor(private http: HttpClient) { }
 
+  createProperty(property: Property): Observable<Property> {
+    let requestUrl = this.url + 'post/';
+    return this.http.post<Property>(requestUrl, property);
+  }
+
   getProperty(id: number): Observable<Property> {
     let requestUrl = this.url;
     if (id) {

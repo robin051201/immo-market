@@ -24,24 +24,25 @@ export class DetailsViewComponent implements OnInit {
 
   createOfferGroup = new FormGroup({
     mainTitle: new FormControl('', [Validators.required]),
+    subTitle: new FormControl('', [Validators.required]),
     description: new FormControl(''),
     country: new FormControl(''),
-    sellPrice: new FormControl(''),
+    sellPrice: new FormControl(0),
     state: new FormControl(''),
     city: new FormControl(''),
     street: new FormControl(''),
-    plotSize: new FormControl(''),
-    livingSpaceSize: new FormControl(''),
-    rooms: new FormControl(''),
-    bathrooms: new FormControl(''),
-    bedrooms: new FormControl(''),
-    hasCellar: new FormControl(''),
-    garageRooms: new FormControl(''),
+    plotSize: new FormControl(0),
+    livingSpaceSize: new FormControl(0),
+    rooms: new FormControl(0),
+    bathrooms: new FormControl(0),
+    bedrooms: new FormControl(0),
+    hasCellar: new FormControl(false),
+    garageRooms: new FormControl(0),
     objectTypeName: new FormControl(''),
-    isActive: new FormControl(''), 
-    discountPrice: new FormControl(''),
-    hasDiscount: new FormControl(''),
-    priceOnContact: new FormControl(''),
+    isActive: new FormControl(false),
+    discountPrice: new FormControl(0),
+    hasDiscount: new FormControl(false),
+    priceOnContact: new FormControl(false),
   });
 
   countries: string[] = [];
@@ -59,34 +60,77 @@ export class DetailsViewComponent implements OnInit {
       console.log(item);
 
       this.createOfferGroup.controls['mainTitle'].setValue(item.mainTitle);
+      this.createOfferGroup.controls['subTitle'].setValue(item.subTitle);
       this.createOfferGroup.controls['description'].setValue(item.description);
       this.createOfferGroup.controls['country'].setValue(item.country);
       this.createOfferGroup.controls['sellPrice'].setValue(item.sellPrice);
       this.createOfferGroup.controls['state'].setValue(item.state);
       this.createOfferGroup.controls['city'].setValue(item.city);
-      this.createOfferGroup.controls['street'].setValue(item.street); 
+      this.createOfferGroup.controls['street'].setValue(item.street);
       this.createOfferGroup.controls['plotSize'].setValue(item.city);
       this.createOfferGroup.controls['livingSpaceSize'].setValue(item.street);
-      this.createOfferGroup.controls['rooms'].setValue(item.street); 
+      this.createOfferGroup.controls['rooms'].setValue(item.street);
       this.createOfferGroup.controls['bathrooms'].setValue(item.street);
       this.createOfferGroup.controls['bedrooms'].setValue(item.street);
       this.createOfferGroup.controls['hasCellar'].setValue(item.street);
       this.createOfferGroup.controls['garageRooms'].setValue(item.street);
-      this.createOfferGroup.controls['objectTypeName'].setValue(item.street);  
+      this.createOfferGroup.controls['objectTypeName'].setValue(item.street);
       this.createOfferGroup.controls['isActive'].setValue(item.street);
       this.createOfferGroup.controls['priceOnContact'].setValue(item.street);
       this.createOfferGroup.controls['hasDiscount'].setValue(item.street);
       this.createOfferGroup.controls['sellPrice'].setValue(item.street);
-      this.createOfferGroup.controls['discountPrice'].setValue(item.street); 
-       
-      // add remaining fields similarly
+      this.createOfferGroup.controls['discountPrice'].setValue(item.street);
 
+      // add remaining fields similarly
       if (this.dialogType === DialogEnum.Inspect) {
         this.createOfferGroup.disable();
       }
     });
   }
 
+  onSubmit() {
+    if (this.createOfferGroup.valid) {
+      let obj = {
+        "id": 0,
+        "immoName": "",
+        "immoId": 0,
+        "mainTitle": this.createOfferGroup.get('mainTitle')?.value,
+        "subTitle": this.createOfferGroup.get('subTitle')?.value,
+        "description": this.createOfferGroup.get('description')?.value,
+        "priceId": 0,
+        "objectTypeId": 0,
+        "locationId": 0,
+        "objectDetailsId": 0,
+        "country": this.createOfferGroup.get('country')?.value,
+        "state": this.createOfferGroup.get('state')?.value,
+        "city": this.createOfferGroup.get('city')?.value,
+        "street": this.createOfferGroup.get('street')?.value,
+        "plotSize": this.createOfferGroup.get('plotSize')?.value,
+        "livingSpaceSize": this.createOfferGroup.get('livingSpaceSize')?.value,
+        "rooms": this.createOfferGroup.get('rooms')?.value,
+        "bathrooms": this.createOfferGroup.get('bathrooms')?.value,
+        "bedrooms": this.createOfferGroup.get('bedrooms')?.value,
+        "hasCellar": this.createOfferGroup.get('hasCellar')?.value,
+        "garageRooms": this.createOfferGroup.get('garageRooms')?.value,
+        "objectTypeName": this.createOfferGroup.get('objectTypeName')?.value,
+        "isActive": this.createOfferGroup.get('isActive')?.value,
+        "sellPrice": this.createOfferGroup.get('sellPrice')?.value,
+        "discountPrice": this.createOfferGroup.get('discountPrice')?.value,
+        "hasDiscount": this.createOfferGroup.get('hasDiscount')?.value,
+        "priceOnContact": this.createOfferGroup.get('priceOnContact')?.value,
+        "immoDetailsId": 0
+      }
+
+      this.offer.createProperty(obj).subscribe((response) => {
+        console.log(response);
+        this.detailsViewService.closeDialog();
+      }, (error) => {
+        console.error(error);
+      });
+    } else {
+      console.log('Form is not valid');
+    }
+  }
 
   closeDialog() {
     this.detailsViewService.closeDialog();

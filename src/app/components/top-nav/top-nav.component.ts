@@ -29,18 +29,10 @@ export class TopNavComponent {
     let offersEntry: NavigationEntry = {
       title: "Offers",
       navigationLink: "/offers-overview"
-    }
-    let contactsEntry: NavigationEntry = {
-      title: "Contact",
-      navigationLink: "/contacts"
-    };
+    } 
 
     this.navigationEntries.push(homeEntry);
-    this.navigationEntries.push(offersEntry)
-    this.navigationEntries.push(contactsEntry)
-
-
-
+    this.navigationEntries.push(offersEntry) 
   }
 
   isOffersComponent() {
