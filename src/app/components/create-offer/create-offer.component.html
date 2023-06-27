@@ -19,9 +19,6 @@
       <label for="desc">Description</label>
       <textarea formControlName="offerdescription" id="desc" name="subject" placeholder="Write something.." style="height:100px"></textarea>
 
-      <label for="price"></label>
-      <input formControlName="price" type="number" id="price" placeholder="Displayed name of the house..">
-
       <label for="subTitle">Subtitle</label>
       <input formControlName="subTitle" type="text" id="subTitle" placeholder="Displayed name of the house..">
 
@@ -34,6 +31,55 @@
       <label for="street">Street</label>
       <input formControlName="street" type="text" id="street" placeholder="Displayed name of the house..">
 
+      <label for="plotSize">Plot Size</label>
+      <input formControlName="plotSize" type="number" id="plotSize" placeholder="Displayed name of the house..">
+
+      <label for="livingSpaceSize">livingSpaceSize</label>
+      <input formControlName="livingSpaceSize" type="number" id="livingSpaceSize" placeholder="Displayed name of the house..">
+
+      <label for="rooms">Rooms</label>
+      <input formControlName="rooms" type="number" id="rooms" placeholder="Displayed name of the house..">
+
+      <label for="bathrooms">Bathrooms</label>
+      <input formControlName="bathrooms" type="number" id="bathrooms" placeholder="Displayed name of the house..">
+
+      <label for="city">Bedrooms</label>
+      <input formControlName="bedrooms" type="number" id="bedrooms" placeholder="Displayed name of the house..">
+
+      <label for="hasCellar">Cellar</label>
+      <input formControlName="hasCellar" type="checkbox" id="hasCellar" placeholder="Displayed name of the house..">
+
+      <label for="garageRooms">Garage rooms</label>
+      <input formControlName="garageRooms" type="number" id="garageRooms" placeholder="Displayed name of the house..">
+
+      <label for="objectTypeName">Object Type</label>
+      <select formControlName="objectTypeName" id="objectTypeName" name="country">
+        <option value="australia">Eigentumswohnung</option>
+        <option value="canada">Penthouse</option>
+        <option value="usa">Einfamilienhaus</option>
+        <option value="usa">Restaurant</option>
+        <option value="usa">Hotel</option>
+      </select>
+
+      <label for="isActive">Active offer</label>
+      <input formControlName="isActive" type="checkbox" id="isActive">
+
+
+
+      <div class="row">
+        <label for="priceOnContact">Price on contact</label>
+        <input formControlName="priceOnContact" type="checkbox" id="priceOnContact">
+
+        <label for="hasDiscount">Discounted</label>
+        <input formControlName="hasDiscount" type="checkbox" id="hasDiscount">
+
+      </div>
+
+      <label for="sellPrice"></label>
+      <input formControlName="sellPrice" type="number" id="sellPrice">
+
+      <label for="discountPrice"></label>
+      <input formControlName="discountPrice" type="number" id="discountPrice">
 
       <ngx-dropzone class="picture-drop" (change)="onSelect($event)">
         <ngx-dropzone-label>Upload pictures by drag & drop</ngx-dropzone-label>
