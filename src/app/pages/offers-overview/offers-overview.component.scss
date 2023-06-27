@@ -193,7 +193,7 @@ body {
 }
 
 .container .box .top:after {
-  content: "View Property";
+  content: "Details";
   color: white;
   font-size: 12px;
   padding: 10px;
@@ -300,6 +300,11 @@ body {
 .container .box .bottom .price span:last-of-type {
   color: #3eaba1;
   font-size: 22px;
+}
+
+.discounted-price {
+  text-decoration:line-through;
+  color: red;
 }
 
 

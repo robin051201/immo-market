@@ -24,7 +24,7 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
   dialogType?: DialogEnum;
   detailsTitle?: string;
   propId?: number;
-  demoImage: string = "https://www.engelvoelkers.com/images/2738b482-b0d6-4e1f-b4de-0500a5f9e8df/sonnige-maisonette-wohnung-mit-tiefgaragenstellplatz-3-obergeschoss";
+
 
   //Subscriptions
   sub0: Subscription | undefined;
@@ -87,7 +87,7 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     }
 
     this.openDetails = !this.openDetails;
-    this.detailsId = id; 
+    this.detailsId = id;
     this.detailsViewService.openDialog(id, DialogEnum.Inspect,"Inspect Property");
   }
 

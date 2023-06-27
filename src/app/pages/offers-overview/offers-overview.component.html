@@ -3,7 +3,10 @@
     <ng-container *ngFor="let property of propertiesNew">
       <div class="box" *ngIf="property.isActive || isAdmin" (click)="openProperty(property.id)">
         <div class="top">
-          <img src="{{demoImage}}" alt="" />
+          <img src="https://www.engelvoelkers.com/images/2738b482-b0d6-4e1f-b4de-0500a5f9e8df/sonnige-maisonette-wohnung-mit-tiefgaragenstellplatz-3-obergeschoss" alt="" />
+          <span>
+            <i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i>
+          </span>
         </div>
         <div class="bottom">
           <h3>{{property.mainTitle}}</h3>
@@ -34,7 +37,12 @@
           </div>
           <div class="price">
             <span>For Sale</span>
-            <span>{{property.sellPrice}} €</span>
+            <p *ngIf="property.hasDiscount" class="discounted-price" style="text-align:left">
+              {{property.sellPrice | currency: 'EUR'}}
+              <span style="text-align: right; float: right; margin-left: 100px"> {{property.discountPrice | currency:'EUR'}}
+            </span>
+            </p>
+            <span *ngIf="!property.hasDiscount">{{property.sellPrice | currency:'EUR'}}</span>
           </div>
         </div>
         <div *ngIf="isAdmin" class="delete-btn" (click)="$event.stopPropagation(); deletePropery(property.id ?? 0)">
