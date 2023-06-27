@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\offers-overview",
+    "\\src\\app\\components\\top-nav",
     "\\src\\app\\pages",
-    "\\src\\app\\Services",
+    "\\src\\app\\pages\\home",
+    "\\src\\app\\pages\\offers-overview",
     "\\src\\assets",
     "\\src\\assets\\images"
   ],
-  "SelectedNode": "\\src\\app\\Services\\apiservice.service.ts",
+  "SelectedNode": "\\src\\app\\components\\details-view\\details-view.component.html",
   "PreviewInSolutionExplorer": false
 }

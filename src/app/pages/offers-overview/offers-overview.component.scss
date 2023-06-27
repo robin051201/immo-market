@@ -26,6 +26,7 @@
   display: flex;
   margin-top: 174px;
   overflow: auto;
+  position: relative;
 
   & .section-container {
     width: 100%;
@@ -289,8 +290,8 @@ body {
 .container .box .bottom .advants > div > div > span {
   font-size: 12px;
   font-weight: bold;
-
 }
+
 .container .box .bottom .advants > div > div > span > span {
   color: #777;
   font-weight: normal;

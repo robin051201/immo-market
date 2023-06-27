@@ -1,0 +1,30 @@
+<dialog open (click)="$event.stopPropagation()">
+
+  <div class="details-container">
+    <div class="left-container">
+      <mat-form-field>
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+
+    </div>
+    <div class="image-container">1</div>
+  </div>
+
+  <div class="footer-section">
+    <button class="close-button">
+      <span>close</span>
+    </button>
+  </div>
+</dialog>

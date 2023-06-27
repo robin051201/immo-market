@@ -5,7 +5,7 @@
 <div class="page-container">
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
-      <div class="box">
+      <div class="box" (click)="openProperty(property.id)">
         <div class="top">
           <img src="{{pproperty.image}}" alt="" />
           <span>
@@ -53,3 +53,5 @@
   </div>
 
 </div>
+
+<lib-details-view [id]="detailsId" (click)="close()"></lib-details-view>

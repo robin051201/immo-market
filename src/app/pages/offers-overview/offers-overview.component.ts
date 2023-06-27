@@ -9,12 +9,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./offers-overview.component.scss']
 })
 export class OffersOverviewComponent implements OnInit {
+  public openDetails: boolean = false;
+  public detailsId?: number;
 
   constructor(
     private offer: ApiserviceService,
     private route: ActivatedRoute, // neu hinzugefügt
   ) {
-  } 
+  }
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       if (params.searchTerm) {
@@ -35,6 +37,17 @@ export class OffersOverviewComponent implements OnInit {
     });
   }
 
+  openProperty(id: number | undefined) {
+    if (!id)
+      return;
+
+    this.openDetails = !this.openDetails;
+    this.detailsId = id;
+  }
+  close() {
+    this.openDetails = false;
+  }
+
   pproperty: any = {
     title: "3ZKB Helle Wohnung in Trier",
     price: 459000,
@@ -46,7 +59,7 @@ export class OffersOverviewComponent implements OnInit {
   }
   properties: any = [];
   propertiesNew: Array<Property> = [];
-    
+
 }
 
 export class Property {
