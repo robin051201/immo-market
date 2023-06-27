@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { DetailsViewService } from './components/details-view/details-view.service';
+import {TopnavService } from "./Services/topnav-service.service";
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { DetailsViewService } from './components/details-view/details-view.servi
     ReactiveFormsModule
   ],
   providers: [
-    DetailsViewService
+    DetailsViewService,
+    TopnavService
   ],
   bootstrap: [AppComponent]
 })
