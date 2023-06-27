@@ -25,10 +25,6 @@ export class TopNavComponent {
     };
     this.navigationEntries.push(homeEntry);
 
-    let contactsEntry: NavigationEntry = {
-      title: "Results",
-      navigationLink: "/results"
-    };
     let offersEntry: NavigationEntry = {
       title: "Offers",
       navigationLink: "/offers-overview"

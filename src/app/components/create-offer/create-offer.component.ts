@@ -19,7 +19,28 @@ export class CreateOfferComponent implements OnInit {
   createOfferGroup = new FormGroup({
     offername: new FormControl('', [Validators.required]),
     offerdescription: new FormControl(''),
-    price: new FormControl('')
+    price: new FormControl(''),
+    immoName: new FormControl(''),
+    mainTitle: new FormControl(''),
+    subTitle: new FormControl(''),
+    description: new FormControl(''),
+    country: new FormControl(''),
+    state: new FormControl(''),
+    city: new FormControl(''),
+    street: new FormControl(''),
+    plotSize: new FormControl(''),
+    livingSpaceSize: new FormControl(''),
+    rooms: new FormControl(''),
+    bathrooms: new FormControl(''),
+    bedrooms: new FormControl(''),
+    hasCellar: new FormControl(''),
+    garageRooms: new FormControl(''),
+    objectTypeName: new FormControl(''),
+    isActive: new FormControl(''),
+    sellPrice: new FormControl(''),
+    discountPrice: new FormControl(''),
+    hasDiscount: new FormControl(''),
+    priceOnContact: new FormControl(''),
     });
 
   onSelect(event: any) {
@@ -44,3 +65,5 @@ export class CreateOfferComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 }
+
+

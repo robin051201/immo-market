@@ -48,9 +48,9 @@ export class OffersOverviewComponent implements OnInit {
   properties: any = [];
   propertiesNew: Array<Property> = [];
 
-  ngOnInit(): void {
-    this.loadProperties();
-  }
+  // ngOnInit(): void {
+  //   this.loadProperties();
+  // }
 
   loadProperties() {
   }

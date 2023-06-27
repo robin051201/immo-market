@@ -1,16 +1,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
-
 <div class="page-container">
+  <button (click)="changeCreateDialogStatus()">Create</button>
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
       <div class="box">
         <div class="top">
           <img src="{{pproperty.image}}" alt="" />
-          <span>
-            <i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i>
-          </span>
+          <span
+          ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+          ></span>
         </div>
         <div class="bottom">
           <h3>{{property.mainTitle}}</h3>
@@ -19,23 +18,24 @@
           </p>
           <div class="advants">
             <div>
-              <span class="material-icons">
-                king_bed
-              </span>
+            <span class="material-icons">
+king_bed
+</span>
               <div><i class="fas fa-th-large"></i><span>{{property.bedrooms}}</span></div>
             </div>
             <div>
-              <span class="material-icons">
-                shower
-              </span>
+            <span class="material-icons">
+shower
+</span>
               <div><i class="fas fa-shower"></i><span>{{property.bathrooms}}</span></div>
             </div>
             <div>
-              <span class="material-icons">
-                location_on
-              </span>
+            <span class="material-icons">
+location_on
+</span>
               <div>
-                <i class="fas fa-vector-square"></i><span>{{property.city}}</span>
+                <i class="fas fa-vector-square"></i
+                ><span>{{property.city}}</span>
               </div>
             </div>
           </div>
@@ -45,11 +45,7 @@
           </div>
         </div>
       </div>
-
-
-
-
     </ng-container>
   </div>
-
 </div>
+<app-create-offer *ngIf="showCreateDialog"></app-create-offer>

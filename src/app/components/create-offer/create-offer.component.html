@@ -1,21 +1,39 @@
 <dialog class="create-dialog" open>
   <div class="container">
     <form [formGroup]="createOfferGroup">
-      <label for="fname">Offer name</label>
-      <input formControlName="offername" type="text" id="fname" placeholder="Nice house with amazing view..">
+      <label for="offername">Offer name</label>
+      <input formControlName="offername" type="text" id="offername" placeholder="Nice house with amazing view...">
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <label for="immoName">Property Name</label>
+      <input formControlName="immoName" type="text" id="immoName" placeholder="Displayed name of the house..">
 
       <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
+      <select formControlName="country" id="country" name="country">
+        <option value="australia">Germany</option>
+        <option value="canada">Austria</option>
+        <option value="usa">Switzerland</option>
+        <option value="usa">Luxemburg</option>
+        <option value="usa">Netherlands</option>
       </select>
 
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      <label for="desc">Description</label>
+      <textarea formControlName="offerdescription" id="desc" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+
+      <label for="price"></label>
+      <input formControlName="price" type="number" id="price" placeholder="Displayed name of the house..">
+
+      <label for="subTitle">Subtitle</label>
+      <input formControlName="subTitle" type="text" id="subTitle" placeholder="Displayed name of the house..">
+
+      <label for="state">State</label>
+      <input formControlName="state" type="text" id="state" placeholder="Displayed name of the house..">
+
+      <label for="city">City</label>
+      <input formControlName="city" type="text" id="city" placeholder="Displayed name of the house..">
+
+      <label for="street">Street</label>
+      <input formControlName="street" type="text" id="street" placeholder="Displayed name of the house..">
+
 
       <ngx-dropzone class="picture-drop" (change)="onSelect($event)">
         <ngx-dropzone-label>Upload pictures by drag & drop</ngx-dropzone-label>
