@@ -1,11 +1,8 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-
 <div class="page-container">
+  <button (click)="changeCreateDialogStatus()">Create</button>
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
-      <div class="box" (click)="openProperty(property.id)">
+      <div class="box">
         <div class="top">
           <img src="{{pproperty.image}}" alt="" />
           <span>
@@ -45,13 +42,7 @@
           </div>
         </div>
       </div>
-
-
-
-
     </ng-container>
   </div>
-
 </div>
-
-<lib-details-view [id]="detailsId" (click)="close()"></lib-details-view>
+<app-create-offer *ngIf="showCreateDialog"></app-create-offer>
