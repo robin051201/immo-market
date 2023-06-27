@@ -11,12 +11,12 @@ export class ApiserviceService {
 
   constructor(private http: HttpClient) { }
 
-  getProperty(id: number): Observable<Property[]> {
+  getProperty(id: number): Observable<Property> {
     let requestUrl = this.url;
     if (id) {
       requestUrl += 'Id/' + id;
     }
-    return this.http.get<Property[]>(requestUrl);
+    return this.http.get<Property>(requestUrl);
   }
 
   getDataBySearchterm(searchText?: string): Observable<Property[]> {

@@ -1,28 +1,94 @@
 <dialog open (click)="$event.stopPropagation()">
-
   <div class="details-container">
     <div class="left-container">
-      <mat-form-field>
-        <mat-label>Input</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Select</mat-label>
-        <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Textarea</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
+      <form [formGroup]="createOfferGroup">
+
+        <span class="title">{{ title }}</span>
+
+        <label for="mainTitle">Property Title</label>
+        <input [readonly]="dialogType === types.Inspect" formControlName="mainTitle" type="text" id="mainTitle" placeholder="Nice house with amazing view...">
+
+        <label for="description">Description</label>
+        <textarea [readonly]="dialogType === types.Inspect" formControlName="description" id="description" name="subject" placeholder="Write a Description.." style="height:100px"></textarea>
+
+        <label for="country">Country</label>
+        <select [disabled]="dialogType === types.Inspect" formControlName="country" id="country" name="country">
+          <option [value]="'Deutschland'">Germany</option>
+          <option [value]="'Österreich'">Austria</option>
+          <option [value]="'Schweiz'">Switzerland</option>
+          <option [value]="'Luxemburg'">Luxemburg</option>
+          <option [value]="'Niederlande'">Netherlands</option>
+        </select>
+
+        <label for="sellPrice">Preis des Objektes</label>
+        <input [readonly]="dialogType === types.Inspect" formControlName="sellPrice" type="number" id="sellPrice" placeholder="Set the Price of house...">
+
+        <label for="state">State</label>
+        <input [readonly]="dialogType === types.Inspect" formControlName="state" type="text" id="state" placeholder="Set State of the House..">
+
+        <label for="city">City</label>
+        <input [readonly]="dialogType === types.Inspect" formControlName="city" type="text" id="city" placeholder="Set City of the house..">
+
+        <label for="street">Street</label>
+        <input [readonly]="dialogType === types.Inspect" formControlName="street" type="text" id="street" placeholder="Set Street name of the house..">
+
+        <label for="plotSize">Plot Size</label>
+        <input formControlName="plotSize" type="number" id="plotSize" placeholder="Displayed name of the house..">
+
+        <label for="livingSpaceSize">livingSpaceSize</label>
+        <input formControlName="livingSpaceSize" type="number" id="livingSpaceSize" placeholder="Displayed name of the house..">
+
+        <label for="rooms">Rooms</label>
+        <input formControlName="rooms" type="number" id="rooms" placeholder="Displayed name of the house..">
+
+        <label for="bathrooms">Bathrooms</label>
+        <input formControlName="bathrooms" type="number" id="bathrooms" placeholder="Displayed name of the house..">
+
+        <label for="city">Bedrooms</label>
+        <input formControlName="bedrooms" type="number" id="bedrooms" placeholder="Displayed name of the house..">
+
+        <label for="hasCellar">Cellar</label>
+        <input formControlName="hasCellar" type="checkbox" id="hasCellar" placeholder="Displayed name of the house..">
+
+        <label for="garageRooms">Garage rooms</label>
+        <input formControlName="garageRooms" type="number" id="garageRooms" placeholder="Displayed name of the house..">
+
+        <label for="objectTypeName">Object Type</label>
+        <select formControlName="objectTypeName" id="objectTypeName" name="country">
+          <option value="australia">Eigentumswohnung</option>
+          <option value="canada">Penthouse</option>
+          <option value="usa">Einfamilienhaus</option>
+          <option value="usa">Restaurant</option>
+          <option value="usa">Hotel</option>
+        </select>
+
+        <label for="isActive">Active offer</label>
+        <input formControlName="isActive" type="checkbox" id="isActive">
+
+
+
+        <div class="row">
+          <label for="priceOnContact">Price on contact</label>
+          <input formControlName="priceOnContact" type="checkbox" id="priceOnContact">
+
+          <label for="hasDiscount">Discounted</label>
+          <input formControlName="hasDiscount" type="checkbox" id="hasDiscount">
+        </div>
+
+        <label for="sellPrice"></label>
+        <input formControlName="sellPrice" type="number" id="sellPrice">
+
+        <label for="discountPrice"></label>
+        <input formControlName="discountPrice" type="number" id="discountPrice">
+
+        <input *ngIf="dialogType !== types.Inspect" type="submit" value="Submit">
+      </form>
     </div>
-    <div class="image-container">1</div>
+    <!--<div class="image-container">1</div>-->
   </div>
 
   <div class="footer-section">
-    <button class="close-button">
+    <button class="close-button" (click)="closeDialog()">
       <span>close</span>
     </button>
   </div>

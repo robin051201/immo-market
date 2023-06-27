@@ -10,6 +10,7 @@
   --color-navigation-text: #3b393a;
   --color-navigation-text-active: #9c380c;
   --color-navigation-button-background: #3f6c51;
+  --color-navigation-button-background-secondary: #9c3d4c;
   --color-navigation-button-background-hover: #2d4d3a;
   --color-navigation-button-text: #fff;
   /*
@@ -81,6 +82,10 @@
         transition: all .3s;
         margin-left: 48px;
 
+        &.secondary {
+          background-color: var(--color-navigation-button-background-secondary);
+        }
+
         &:hover {
           background-color: var(--color-navigation-button-background-hover);
         }
@@ -91,5 +96,15 @@
         }
       }
     }
+  }
+
+  .change-user-button {
+    background-color: blue;
+    box-shadow: none;
+    border: 0;
+    padding: 16px 32px 14px 32px;
+    border-radius: 1px;
+    transition: all .3s;
+    margin-left: 48px;
   }
 }

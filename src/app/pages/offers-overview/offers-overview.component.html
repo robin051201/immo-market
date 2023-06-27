@@ -1,8 +1,7 @@
 <div class="page-container">
-  <button (click)="changeCreateDialogStatus()">Create</button>
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
-      <div class="box">
+      <div class="box" (click)="openProperty(property.id)">
         <div class="top">
           <img src="{{pproperty.image}}" alt="" />
           <span>
@@ -45,4 +44,4 @@
     </ng-container>
   </div>
 </div>
-<app-create-offer *ngIf="showCreateDialog"></app-create-offer>
+<lib-details-view [id]="propId" [title]="detailsTitle" [dialogType]="dialogType" *ngIf="showCreateDialog"></lib-details-view>

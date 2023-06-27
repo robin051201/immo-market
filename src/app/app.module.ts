@@ -7,12 +7,13 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OffersOverviewComponent } from './pages/offers-overview/offers-overview.component';
 import { DetailsViewComponent } from './components/details-view/details-view.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { DetailsViewService } from './components/details-view/details-view.service';
 
 
 @NgModule({
@@ -33,9 +34,12 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    DetailsViewService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
