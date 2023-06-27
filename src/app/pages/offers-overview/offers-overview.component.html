@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="page-container" (click)="close()">
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
       <div class="box" *ngIf="property.isActive || isAdmin" (click)="openProperty(property.id)">
@@ -43,6 +43,7 @@
       </div>
     </ng-container>
   </div>
-</div>
 
-<lib-details-view [id]="propId" [id]="propId" [title]="detailsTitle" [dialogType]="dialogType" *ngIf="showCreateDialog"></lib-details-view>
+  <lib-details-view [id]="propId" [id]="propId" [title]="detailsTitle" [dialogType]="dialogType" *ngIf="showCreateDialog"></lib-details-view>
+
+</div>

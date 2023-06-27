@@ -67,19 +67,19 @@ export class DetailsViewComponent implements OnInit {
       this.createOfferGroup.controls['state'].setValue(item.state);
       this.createOfferGroup.controls['city'].setValue(item.city);
       this.createOfferGroup.controls['street'].setValue(item.street);
-      this.createOfferGroup.controls['plotSize'].setValue(item.city);
-      this.createOfferGroup.controls['livingSpaceSize'].setValue(item.street);
-      this.createOfferGroup.controls['rooms'].setValue(item.street);
-      this.createOfferGroup.controls['bathrooms'].setValue(item.street);
-      this.createOfferGroup.controls['bedrooms'].setValue(item.street);
-      this.createOfferGroup.controls['hasCellar'].setValue(item.street);
-      this.createOfferGroup.controls['garageRooms'].setValue(item.street);
-      this.createOfferGroup.controls['objectTypeName'].setValue(item.street);
-      this.createOfferGroup.controls['isActive'].setValue(item.street);
-      this.createOfferGroup.controls['priceOnContact'].setValue(item.street);
-      this.createOfferGroup.controls['hasDiscount'].setValue(item.street);
-      this.createOfferGroup.controls['sellPrice'].setValue(item.street);
-      this.createOfferGroup.controls['discountPrice'].setValue(item.street);
+      this.createOfferGroup.controls['plotSize'].setValue(item.plotSize);
+      this.createOfferGroup.controls['livingSpaceSize'].setValue(item.livingSpaceSize);
+      this.createOfferGroup.controls['rooms'].setValue(item.rooms);
+      this.createOfferGroup.controls['bathrooms'].setValue(item.bathrooms);
+      this.createOfferGroup.controls['bedrooms'].setValue(item.bedrooms);
+      this.createOfferGroup.controls['hasCellar'].setValue(item.hasCellar);
+      this.createOfferGroup.controls['garageRooms'].setValue(item.garageRooms);
+      this.createOfferGroup.controls['objectTypeName'].setValue(item.objectTypeName);
+      this.createOfferGroup.controls['isActive'].setValue(item.isActive);
+      this.createOfferGroup.controls['priceOnContact'].setValue(item.priceOnContact);
+      this.createOfferGroup.controls['hasDiscount'].setValue(item.hasDiscount);
+      this.createOfferGroup.controls['sellPrice'].setValue(item.sellPrice);
+      this.createOfferGroup.controls['discountPrice'].setValue(item.discountPrice);
 
       // add remaining fields similarly
       if (this.dialogType === DialogEnum.Inspect) {
