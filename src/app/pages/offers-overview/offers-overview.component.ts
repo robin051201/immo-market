@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DetailsViewService } from '../../components/details-view/details-view.service';
+import { TopnavService } from '../../Services/topnav-service.service'
 
 export enum DialogEnum {
   Inspect = 1,
@@ -22,11 +23,13 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
   sub0: Subscription | undefined;
   sub1: Subscription | undefined;
   dialogType?: DialogEnum;
+  public isAdmin: boolean = false;
 
   constructor(
     private offer: ApiserviceService,
     private route: ActivatedRoute,
     private detailsViewService: DetailsViewService,
+    private topNavService: TopnavService,
   ) { }
 
   propId?: number;
@@ -53,6 +56,10 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
         this.loadData();
       }
     });
+
+    this.topNavService.sharedData$.subscribe(userStatus => {
+      this.isAdmin = userStatus;
+    })
   }
 
   ngOnDestroy(): void {

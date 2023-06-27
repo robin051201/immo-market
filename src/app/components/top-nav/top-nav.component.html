@@ -18,7 +18,7 @@
       <span>Create offer</span>
     </button>
 
-    <button (click)="changeUserStatus()" class="meet-me-button">
+    <button *ngIf="isOffersComponent()" (click)="changeUserStatus()" class="meet-me-button">
       <span>{{userStatus}} view</span>
     </button>
   </div>

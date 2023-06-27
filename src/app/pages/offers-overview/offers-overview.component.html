@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="container">
     <ng-container *ngFor="let property of propertiesNew">
-      <div class="box" (click)="openProperty(property.id)">
+      <div class="box" *ngIf="property.isActive || isAdmin" (click)="openProperty(property.id)">
         <div class="top">
           <img src="{{pproperty.image}}" alt="" />
           <span>

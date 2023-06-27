@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/cor
 import { ActivatedRoute, Router } from "@angular/router";
 import { DialogEnum } from '../../pages/offers-overview/offers-overview.component';
 import { DetailsViewService } from '../details-view/details-view.service';
+import { TopnavService } from "../../Services/topnav-service.service";
 
 @Component({
   selector: 'lib-top-nav',
@@ -18,7 +19,7 @@ export class TopNavComponent {
   @Output()
   createClicked = new EventEmitter<boolean>();
 
-  constructor(private router: Router, private detailsViewService: DetailsViewService) {
+  constructor(private router: Router, private detailsViewService: DetailsViewService, private topNavService: TopnavService) {
     this.navigationEntries = [];
 
     let homeEntry: NavigationEntry = {
@@ -46,6 +47,7 @@ export class TopNavComponent {
     } else {
       this.userStatus = 'Admin';
     }
+      this.topNavService.setData(this.isAdmin);
   }
 
   title = 'ImmoMarket';
