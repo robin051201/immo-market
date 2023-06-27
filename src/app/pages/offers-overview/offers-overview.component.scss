@@ -322,6 +322,20 @@ body {
   cursor: pointer;
 }
 
+.box .edit-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  background-color: #d85555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .box .delete-btn span {
   font-size: 32px;
   color: white;

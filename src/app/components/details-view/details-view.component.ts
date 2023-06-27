@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DialogEnum } from '../../pages/offers-overview/offers-overview.component';
 import { ApiserviceService } from '../../Services/apiservice.service';
 import { DetailsViewService } from './details-view.service';
+import { TopnavService } from "../../Services/topnav-service.service";
 
 
 @Component({
@@ -21,6 +22,8 @@ export class DetailsViewComponent implements OnInit {
   createDialog = document.getElementById("createDialog");
   files: File[] = [];
   types: any = DialogEnum;
+
+  isAdmin: boolean = false;
 
   createOfferGroup = new FormGroup({
     mainTitle: new FormControl('', [Validators.required]),
@@ -48,6 +51,7 @@ export class DetailsViewComponent implements OnInit {
   countries: string[] = [];
   constructor(
     private offer: ApiserviceService,
+    private topNavService: TopnavService,
     private http: HttpClient,
     private detailsViewService: DetailsViewService,
     private cd: ChangeDetectorRef) {
@@ -86,7 +90,11 @@ export class DetailsViewComponent implements OnInit {
         this.createOfferGroup.disable();
       }
     });
+    this.topNavService.sharedData$.subscribe(userStatus => {
+      this.isAdmin = userStatus;
+    });
   }
+
 
   onSubmit() {
     if (this.createOfferGroup.valid) {
@@ -158,4 +166,4 @@ export class DetailsViewComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-} 
+}

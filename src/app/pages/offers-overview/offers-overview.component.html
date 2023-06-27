@@ -48,6 +48,10 @@
         <div *ngIf="isAdmin" class="delete-btn" (click)="$event.stopPropagation(); deletePropery(property.id ?? 0)">
           <span>-</span>
         </div>
+
+        <div *ngIf="isAdmin" class="edit-btn" (click)="$event.stopPropagation(); enableEditMode(property.id ?? 0)">
+          <span>-</span>
+        </div>
       </div>
     </ng-container>
   </div>

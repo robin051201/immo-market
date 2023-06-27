@@ -14,6 +14,10 @@ export class DetailsViewService {
         this.sub0.next({ id: propertyId, type: type, title: title });
     }
 
+  openEditDialog(propertyId: number, type: DialogEnum, title: string): void {
+    this.sub0.next({ id: propertyId, type: type, title: title });
+  }
+
     closeDialog(): void {
         this.sub1.next();
     }

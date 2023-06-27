@@ -66,7 +66,7 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
 
     this.topNavService.sharedData$.subscribe(userStatus => {
       this.isAdmin = userStatus;
-    })
+    });
   }
 
   ngOnDestroy(): void {
@@ -89,6 +89,11 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     this.openDetails = !this.openDetails;
     this.detailsId = id;
     this.detailsViewService.openDialog(id, DialogEnum.Inspect,"Inspect Property");
+  }
+
+  enableEditMode(id: number): void {
+    this.detailsId = id;
+    this.detailsViewService.openEditDialog(id, DialogEnum.Edit,"Edit Property");
   }
 
   deletePropery(id:number): void {
