@@ -33,10 +33,11 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.detailsViewService.onOpenDialog().subscribe(({ id, type }) => {
+    this.detailsViewService.onOpenDialog().subscribe(({ id, type, title }) => {
       this.propId = id;
       this.dialogType = type;
       this.showCreateDialog = true;
+      this.detailsTitle = title;
     });
 
     this.sub1 = this.detailsViewService.onCloseDialog().subscribe(() => {
@@ -76,7 +77,7 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
 
     this.openDetails = !this.openDetails;
     this.detailsId = id; 
-    this.detailsViewService.openDialog(id, DialogEnum.Inspect);
+    this.detailsViewService.openDialog(id, DialogEnum.Inspect,"Inspect Property");
   }
 
   close(): void {

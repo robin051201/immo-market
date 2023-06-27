@@ -53,7 +53,7 @@ export class TopNavComponent {
   createOffer() {
     this.createClickedStatus = !this.createClickedStatus;
     this.createClicked.emit(this.createClickedStatus);
-    this.detailsViewService.openDialog(0, DialogEnum.Create);
+    this.detailsViewService.openDialog(0, DialogEnum.Create, "Create new Property");
   }
 }
 
