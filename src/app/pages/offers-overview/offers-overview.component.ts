@@ -20,10 +20,17 @@ export enum DialogEnum {
 export class OffersOverviewComponent implements OnInit, OnDestroy {
   public openDetails: boolean = false;
   public detailsId?: number;
+  public isAdmin: boolean = false;
+  dialogType?: DialogEnum;
+  detailsTitle?: string;
+  propId?: number;
+  demoImage: string = "https://www.engelvoelkers.com/images/2738b482-b0d6-4e1f-b4de-0500a5f9e8df/sonnige-maisonette-wohnung-mit-tiefgaragenstellplatz-3-obergeschoss";
+
+  //Subscriptions
   sub0: Subscription | undefined;
   sub1: Subscription | undefined;
-  dialogType?: DialogEnum;
-  public isAdmin: boolean = false;
+
+
 
   constructor(
     private offer: ApiserviceService,
@@ -32,7 +39,6 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     private topNavService: TopnavService,
   ) { }
 
-  propId?: number;
 
   ngOnInit(): void {
 
@@ -75,8 +81,6 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     });
   }
 
-  detailsTitle?: string;
-
   openProperty(id: number | undefined): void {
     if (!id) {
       return;
@@ -85,6 +89,10 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     this.openDetails = !this.openDetails;
     this.detailsId = id; 
     this.detailsViewService.openDialog(id, DialogEnum.Inspect,"Inspect Property");
+  }
+
+  deletePropery(id:number): void {
+    this.offer.deleteProperty(id);
   }
 
   close(): void {
@@ -97,16 +105,6 @@ export class OffersOverviewComponent implements OnInit, OnDestroy {
     this.showCreateDialog = !this.showCreateDialog;
     console.log(this.showCreateDialog);
   }
-
-  pproperty: any = {
-    title: "3ZKB Helle Wohnung in Trier",
-    price: 459000,
-    bedrooms: 2,
-    bathrooms: 1,
-    image: "https://www.engelvoelkers.com/images/2738b482-b0d6-4e1f-b4de-0500a5f9e8df/sonnige-maisonette-wohnung-mit-tiefgaragenstellplatz-3-obergeschoss",
-    address: "Trier-Zewen",
-    description: "Helle Wohnung. Optimal für Pendler"
-  };
 
   properties: any = [];
   propertiesNew: Array<Property> = [];

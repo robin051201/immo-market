@@ -14,8 +14,15 @@ export class ApiserviceService {
   createProperty(property: Property): Observable<Property> {
     let requestUrl = this.url + 'post/';
     return this.http.post<Property>(requestUrl, property);
-  }
+  } 
 
+  deleteProperty(id: number): Observable<Property> {
+    let requestUrl = this.url;
+    if (id) {
+      requestUrl += 'delete/' + id;
+    }
+    return this.http.delete<Property>(requestUrl);
+  }
   getProperty(id: number): Observable<Property> {
     let requestUrl = this.url;
     if (id) {

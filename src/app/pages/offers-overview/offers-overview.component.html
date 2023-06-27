@@ -3,10 +3,7 @@
     <ng-container *ngFor="let property of propertiesNew">
       <div class="box" *ngIf="property.isActive || isAdmin" (click)="openProperty(property.id)">
         <div class="top">
-          <img src="{{pproperty.image}}" alt="" />
-          <span>
-            <i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i>
-          </span>
+          <img src="{{demoImage}}" alt="" />
         </div>
         <div class="bottom">
           <h3>{{property.mainTitle}}</h3>
@@ -40,8 +37,12 @@
             <span>{{property.sellPrice}} €</span>
           </div>
         </div>
+        <div *ngIf="isAdmin" class="delete-btn" (click)="$event.stopPropagation(); deletePropery(property.id ?? 0)">
+          <span>-</span>
+        </div>
       </div>
     </ng-container>
   </div>
 </div>
+
 <lib-details-view [id]="propId" [id]="propId" [title]="detailsTitle" [dialogType]="dialogType" *ngIf="showCreateDialog"></lib-details-view>
